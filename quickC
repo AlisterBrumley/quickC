@@ -1,0 +1,17 @@
+#! /bin/bash
+
+PWD=$PWD
+filename=$1
+
+if [ ! -d src ]; then
+	mkdir src
+fi
+
+if [ ! -d include ]; then
+	mkdir include
+fi
+
+touch src/${filename}.c
+touch include/${filename}.h
+
+echo "#include \"${filename}.h\"" >> src/${filename}.c
